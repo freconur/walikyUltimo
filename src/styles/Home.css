@@ -1,0 +1,6 @@
+.Home {
+    height: calc(100vh - 145px);
+}
+.Home__container {
+    /* height: 100%; */
+}

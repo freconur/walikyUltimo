@@ -1,0 +1,19 @@
+.Navbar__list {
+	display: flex;
+	margin: 0 0 0 20px;
+	font-size: 15px;
+	min-width: 400px;
+	padding: 0px;
+	height: inherit;
+	/* grid-area: list; */
+}
+.Navbar__list--section {
+	color: white;
+	text-decoration: none;
+	list-style: none;
+	margin: 0px 0px 0px 0px;
+	/* font-size: 20px; */
+	padding: 10px 15px;
+	font-weight: 500;
+	font-family: 'Poppins';
+}

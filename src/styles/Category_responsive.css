@@ -1,0 +1,26 @@
+@media ( max-width: 1024px) {
+    .category__container {
+    grid-template-columns: repeat(2,minmax(300px, 1fr));
+
+    }
+}
+@media (max-width: 768px) {
+    .category__container {
+        grid-template-columns: repeat(2,minmax(100px, 380px));
+        margin: 20px;
+    }
+}
+@media (max-width: 620px) {
+    .category__container {
+        grid-template-columns: repeat(1,minmax(100px, 1fr));
+        margin: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .category__container {
+        grid-template-columns: repeat(1,minmax(100px, 380px));
+        margin: 0px;
+        padding: 20px;
+    }
+}

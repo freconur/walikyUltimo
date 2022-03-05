@@ -1,0 +1,9 @@
+@media ( max-width: 420px) {
+    .product__image--modal {
+        padding: 10px;
+
+    }
+    .product__title--modal {
+        font-size: 100%;
+    }
+}

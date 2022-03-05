@@ -1,0 +1,31 @@
+.container__prod {
+    /* height:fit-content; */
+    /* height: calc(100% - 100px); */
+    /* align-items: center; */
+    background-image: url("../assets/images/background.png");
+    background-position: bottom;
+    /* background-size: cover; */
+    background-repeat: round;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    min-height: calc(100vh - 100px);
+}
+.container__products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 380px));
+    justify-content: center;
+    grid-gap: 20px 20px;
+    text-decoration: none;
+    list-style: none;
+    padding: inherit;
+    margin: inherit;
+}
+.product__title {
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    font-weight: 800;
+}

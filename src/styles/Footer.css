@@ -1,0 +1,35 @@
+.Footer {
+    background: #55be97;
+    height: 100%;
+    /* margin-top: 50px; */
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+    
+	}
+.Footer__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 1250px;
+	min-width: 320px;
+	height: 100%;
+}
+.Footer__container--icon {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Footer__tittle {
+
+	font-size: 30px;
+	font-family: 'Poppins';
+	margin: inherit;
+}
+/* .icon-social {
+	font-size: 40px;
+	font-family: 'Flaticon';
+	text-decoration: none;
+	
+} */

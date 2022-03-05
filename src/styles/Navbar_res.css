@@ -1,0 +1,46 @@
+@media (max-width: 1024px) {
+    
+    .Navbar__container {
+        grid-template-columns: 1fr 4fr;
+	    grid-template-areas: 
+		"logo  userOption"
+        ;
+        justify-items: end;
+    }
+    .Navbar__list{
+        display: none;
+    }
+
+}
+@media (max-width: 768px) {
+    .resgistration {
+        display: none;
+    }
+    .Navbar__list--res {
+        display: block;
+    }
+    
+    .Navbar__menuBurger {
+        display: flex;
+    }
+    .Navbar__list {
+        min-width: 60%;
+    }
+
+}
+@media (max-width: 420px) {
+    .Navbar__list {
+        min-width: 60%;
+    }
+    .Navbar__list--res {
+        display: none;
+    }
+    .Navbar__container-logo {
+        /* height: 100%; */
+        width: initial;
+    }
+    .Navbar__container {
+        /* justify-content: center; */
+    }   
+
+}

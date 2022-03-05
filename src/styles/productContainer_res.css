@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .container__products {
+        grid-template-columns: repeat(2, minmax(100px, 380px));
+    }
+    .container__products {
+        padding: inherit;
+    }
+}
+@media (max-width: 420px) {
+    .container__products {
+        grid-template-columns: repeat(1, minmax(100px, 300px));
+    }
+    
+}

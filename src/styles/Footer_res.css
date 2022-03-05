@@ -1,0 +1,8 @@
+@media (max-width: 650px) {
+    .Footer__container {
+        display: block;
+        text-align: center;
+        height: 100%;
+    }
+
+}

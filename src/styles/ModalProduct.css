@@ -1,0 +1,68 @@
+.portalstyles {
+    /* padding: 50px; */
+    background-color: #fff;
+    /* margin: auto; */
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    text-align: center;
+    max-height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    /* position: fixed; */
+    /* top: 50%;n
+    left: 50%;
+    transform: translate(-50%, 50%); */
+    /* z-index: 1; */
+    /* display: flex; */
+}
+.portalOverlay {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    align-items: center;
+    /* z-index: 1000; */
+}
+.portal_button {
+    position:relative;
+    top:10px;
+    right: 10px;
+}
+.product__image--modal {
+    width: 80%;
+    width: 100%;
+    padding: 50px;
+    /* margin: inherit; */
+}
+.product__name--modal {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(167 86 247);
+    display: block;
+    /* justify-content: center;
+    align-items: center; */
+    color: #ffff;
+    padding: 30px;
+}
+.product__title--modal {
+    font-weight: 700;
+    font-size: 100%;
+    text-transform: uppercase;
+    width: 100%;
+    margin: inherit;
+
+    font-size: 25px;
+    font-family: "Poppins";
+    /* padding: 25px; */
+
+}
+.product__close {
+    margin: inherit;
+    cursor: pointer;
+}
