@@ -20,11 +20,6 @@ const Dashboard_prueba = () => {
         }
       };
     const submitHandler = async(data, categorys) => {
-      console.log(data)
-      debugger
-      console.log("data de submithandler:", data)
-      console.log("data de categorys:", categorys)
-      debugger
       await addDoc(categorys, data)
     }
   return (

@@ -12,9 +12,11 @@ const db = getFirestore(app);
       name: "",
       price: "",
       category: "",
-      image: ""
+      collection:"",
+      image: "",
     }
     const [inputInitial, setInputInitial] = useState(initialValueInput);
+    const [imageFiles, setImageFiles] = useState("")
     //variables para volver dinamica la seleccion de valores de la coleccion
     const categoryCollections = {
       cojines: collection (db, 'cojines'),
@@ -30,8 +32,6 @@ const db = getFirestore(app);
     const [imageCollections, setImageCollections] = useState("")
     const [categorys, setCategorys] = useState("")
     const [saveImage, setSaveImage] = useState(false)
-    const [image, setImage] = useState("")
-
     //aqui comienza la funcion de para los cambios de valores de las colleciones
     const handleChangeInput = (e) => {
       const { name, value } = e.target;
@@ -51,61 +51,62 @@ const db = getFirestore(app);
          setCategorys(categoryCollections.polos)
          setImageCollections(imageCollection.polos)
       }
+      setInputInitial({...inputInitial, collection:name})
     }
-    // const handleChangeCategory = (e) => {
-    //     const name = e.target.value
-    //     setInputInitial({...inputInitial, category: name})
-    // }
+     const handleChangeCategory = (e) => {
+         const name = e.target.value
+         setInputInitial({...inputInitial, category: name})
+        //  setInputInitial({...inputInitial, category: name})
+     }
 
       const fileHandler = async (e) => {
+        // const name = e.target.value;
+        // console.log("valor del input de imagen:", name)
         const archivoLocal = e.target.files[0];
         const archivoRef = ref(storage, `${imageCollections}/${archivoLocal.name}`);
         await uploadBytes(archivoRef, archivoLocal);
         const url = await getDownloadURL(archivoRef);
         console.log('se cargo la imagen');
-        // setInputInitial({...inputInitial, image: url});
-        setImage(url)
+        setInputInitial({...inputInitial, image: url});
+        // setImageFiles(archivoLocal)
         setSaveImage(!saveImage)
       }
-    // const handleSubmit = (e) => {
-    //   e.preventDefault()
-    //   submitHandler({...inputInitial}, categorys)
-    //   reset()
-    //   // setInputInitial({...initialValueInput,})
-    // }
-    const {register, formState: {errors}, handleSubmit} = useForm();
-      const onSubmit = (data, e) => {
-        submitHandler(data, categorys)
-        // submitHandler({...data, image: image, collection: imageCollections}, categorys)
-        // submitHandler(inputInitial, categorys)
-        // submitHandler(data, categorys)
-        // setInputInitial({...initialValueInput})
-        e.target.reset()
-        // setSaveImage(!saveImage)
-      }
+     const handleSubmit = (e) => {
+       e.preventDefault()
+       const name = e.collection.value
+       console.log("valor de collection:", name)
+       debugger
+       submitHandler(inputInitial, categorys)
+       setInputInitial(initialValueInput)
+      setSaveImage(!saveImage)
+        //  setImageFiles("")
+      debugger
+     }
+    
     return (
       <div className="dashboard_content">
         <h1>Agrega nuevos items a la coleccion</h1>
-        {/* <form onSubmit={handleSubmit}> */}
-        <div className="mb-3">
+        <form 
+        onSubmit={handleSubmit}
+        >
+          <div className="mb-3">
+          <div className="mb-3">
               <label className="form-label">subir imagen</label>
               <input
-              // {...register("image", { required: true })}
-              // name="image"
+              name='image'
               type="file"
               className="form-control"
-              placeholder="seleciona una imagen"
               onChange={fileHandler}
+              // value={imageFiles}
               />
             </div>
             {saveImage && "se cargo la imagen"}
-            {/* {errors.image?.type === 'required' && "First name is required"} */}
         <div className='mb-3'>
             <label>Collecion</label>
             <select 
-            // name="collection"
+            name="collection"
             onChange={handleImageCollection}
-            // {...register("collections",{ required: true })}
+            value={inputInitial.collection}
             >
               <option value="">selecciona una collecion</option>
               <option value="cojines">cojines</option>
@@ -113,44 +114,34 @@ const db = getFirestore(app);
               <option value="polos">polos</option>
             </select>
         </div>
-          {/* <span>{errors.collections && "selecciona una collecion"}</span> */}
-        <form 
-        onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className="mb-3">
-              
             <div>
               <label className="form-label">nombre de producto</label>
               <input
-                {...register("name", { required: true })}
                 name="name"
                 type="text"
                 className="form-control"
                 placeholder="nombre de producto"
                 onChange={handleChangeInput}
-                // value={inputInitial.name}
+                value={inputInitial.name}
               />
             </div>
-            {errors.name?.type === 'required' && "nombre es requerido"}
             <div className="mb-3">
               <label className="form-label">precio de producto</label>
               <input
-              {...register("price", { required: true })}
                 name="price"
                 type="number"
                 className="form-control"
                 placeholder="nombre de producto"
                 onChange={handleChangeInput}
-                // value={inputInitial.price}
+                value={inputInitial.price}
               />
             </div>
-            {errors.price?.type === 'required' && "First name is required"}
             <div className="mb-3">
               <label className="form-label">Categoria: </label>
               <select
-              {...register("category", { required: true })}
               name="category"
-              // onChange={handleChangeCategory}
+              onChange={handleChangeCategory}
+              value={inputInitial.category}
               >
                 <option value="">Selecciona una categoria</option>
                 <option value="bts">bts</option>
@@ -158,7 +149,6 @@ const db = getFirestore(app);
                 <option value="butter">butter</option>
               </select>
             </div>
-            {errors.category?.type === 'required' && "First name is required"}
             
             <div>
             <button
