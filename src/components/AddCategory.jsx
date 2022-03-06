@@ -71,28 +71,36 @@ const db = getFirestore(app);
         // setImageFiles(archivoLocal)
         setSaveImage(!saveImage)
       }
-     const handleSubmit = (e) => {
-       e.preventDefault()
-       const name = e.collection.value
-       console.log("valor de collection:", name)
-       debugger
-       submitHandler(inputInitial, categorys)
-       setInputInitial(initialValueInput)
-      setSaveImage(!saveImage)
-        //  setImageFiles("")
-      debugger
-     }
+    //  const handleSubmit = (e,valueVerification) => {
+    //    e.preventDefault()
+    //    valueVerification(e.target.name)
+    //    submitHandler(inputInitial, categorys)
+    //    setInputInitial(initialValueInput)
+    //   setSaveImage(!saveImage)
+    //     //  setImageFiles("")
+    //   debugger
+    //  }
+
+     const { register, reset, handleSubmit, formState: { errors } } = useForm();
+     const onSubmit = (data) =>{
+      // e.preventDefault();
+      console.log("react hook form:",data)
+      // debugger
+      submitHandler({...data, image: inputInitial.image}, categorys)
+      reset()
+    }
     
     return (
       <div className="dashboard_content">
         <h1>Agrega nuevos items a la coleccion</h1>
         <form 
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-3">
           <div className="mb-3">
               <label className="form-label">subir imagen</label>
               <input
+              {...register("image",{required: true})}
               name='image'
               type="file"
               className="form-control"
@@ -100,54 +108,63 @@ const db = getFirestore(app);
               // value={imageFiles}
               />
             </div>
+            {errors.image?.type === 'required' && "First name is required"}
             {saveImage && "se cargo la imagen"}
         <div className='mb-3'>
             <label>Collecion</label>
             <select 
+            {...register("collection",{required: true})}
             name="collection"
             onChange={handleImageCollection}
-            value={inputInitial.collection}
+            // value={inputInitial.collection}
             >
               <option value="">selecciona una collecion</option>
               <option value="cojines">cojines</option>
               <option value="tazas">tazas</option>
               <option value="polos">polos</option>
             </select>
+            {errors.collection?.type === 'required' && "First name is required"}
         </div>
             <div>
               <label className="form-label">nombre de producto</label>
               <input
+              {...register("name",{required: true})}
                 name="name"
                 type="text"
                 className="form-control"
                 placeholder="nombre de producto"
                 onChange={handleChangeInput}
-                value={inputInitial.name}
+                // value={inputInitial.name}
               />
+              {errors.name?.type === 'required' && "First name is required"}
             </div>
             <div className="mb-3">
               <label className="form-label">precio de producto</label>
               <input
+              {...register("price",{required: true})}
                 name="price"
                 type="number"
                 className="form-control"
                 placeholder="nombre de producto"
                 onChange={handleChangeInput}
-                value={inputInitial.price}
+                // value={inputInitial.price}
               />
+              {errors.price?.type === 'required' && "First name is required"}
             </div>
             <div className="mb-3">
               <label className="form-label">Categoria: </label>
               <select
               name="category"
               onChange={handleChangeCategory}
-              value={inputInitial.category}
+              {...register("category",{required: true})}
+              // value={inputInitial.category}
               >
                 <option value="">Selecciona una categoria</option>
                 <option value="bts">bts</option>
                 <option value="disney">disney</option>
                 <option value="butter">butter</option>
               </select>
+              {errors.category?.type === 'required' && "First name is required"}
             </div>
             
             <div>
