@@ -43,6 +43,9 @@ const Navbar = () => {
 			
 				<ul className={`Menu ${toogle ? 'Menu-active' : ''}`}>
 					<li className="Menu__li">
+						<Link className="Menu__list" to='/signin' >Registrate</Link>
+					</li>
+					<li className="Menu__li">
 						<Link className="Menu__list" to='/' >Blog</Link>
 					</li>
 					<li className="Menu__li">

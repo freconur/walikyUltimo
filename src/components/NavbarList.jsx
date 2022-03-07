@@ -5,6 +5,7 @@ import '../styles/NavbarList.css'
 const NavbarList = () => {
   return (
     <ul className="Navbar__list">
+      {/* <Link to='/signin' className="Navbar__list--section ">Registrate</Link> */}
       <Link to='/blog' className="Navbar__list--section ">Blog</Link>
 			<Link to='/contactanos' className="Navbar__list--section">Contactanos</Link>
 			<Link to='/nosotros' className="Navbar__list--section">Nosotros</Link>
