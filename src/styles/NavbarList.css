@@ -1,10 +1,11 @@
 .Navbar__list {
 	display: flex;
-	margin: 0 0 0 20px;
-	font-size: 15px;
+	margin: 0 0 0 50px;
+	font-size: 17px;
 	min-width: 400px;
 	padding: 0px;
 	height: inherit;
+	letter-spacing: 0.03rem;
 	/* grid-area: list; */
 }
 .Navbar__list--section {
@@ -16,4 +17,19 @@
 	padding: 10px 15px;
 	font-weight: 500;
 	font-family: 'Poppins';
+}
+.Navbar__list--section:hover{
+	color:#4f31da;
+}
+.Navbar__list--section::after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #4f31da;
+	transition: width .3s;
+}
+.Navbar__list--section:hover::after{
+	width: 100%;
+	transition: width .3s;
 }

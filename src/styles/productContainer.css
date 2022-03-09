@@ -12,9 +12,13 @@
     padding: 20px;
     min-height: calc(100vh - 100px);
 }
+.product__container {
+    max-width: 1200px;
+    margin: auto;
+}
 .container__products {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 380px));
+    grid-template-columns: repeat(5, minmax(100px, 380px));
     justify-content: center;
     grid-gap: 20px 20px;
     text-decoration: none;

@@ -2,5 +2,9 @@
     /* height: calc(100vh - 145px); */
 }
 .Home__container {
-    /* height: 100%; */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        ''
+    ;
 }

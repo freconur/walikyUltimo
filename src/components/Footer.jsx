@@ -19,7 +19,7 @@ const Footer = () => {
 				</div>
 
 				<div>
-					<h1 className="Footer__tittle">©Waliky 2021</h1>
+					<h1 className="Footer__tittle">©Waliky 2022</h1>
 				</div>
 			</div>
 		</div>

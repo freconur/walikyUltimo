@@ -3,6 +3,17 @@
         height: initial;
     }
     .Home__container {
-        height: initial
+        height: initial;
+        /* display: block; */
     }
 }
+@media (max-width: 1260px){
+    
+    .Home__container {
+        display: grid;
+        grid-template-rows: 324px minmax(500px, 1fr);
+        grid-template-areas: 
+            ''
+        ;
+         }
+    }

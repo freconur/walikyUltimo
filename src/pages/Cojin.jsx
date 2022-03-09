@@ -33,7 +33,7 @@ const Cojin = () => {
     <React.Fragment>
       <div className="container__prod">
         <h1 className="product__title">Cojines</h1>
-        <div>
+        <div className='product__container'>
           {loading && <PageLoading/>}
           <ul className="container__products">
             {product.map((prod) => (

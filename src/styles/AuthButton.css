@@ -8,9 +8,13 @@
 	letter-spacing: 0.0125em;
 	white-space: nowrap;
 }
+.resgistration:hover{
+	color: #00ffa0;
+	border: 1px solid #00ffa0;
+}
 .inicioSesion {
 	/* margin-left: 20px; */
-	background-color: #55BE97;
+	background-color: #00b19f;
 	border-radius: 5px;
 	padding: 10px 15px;
 	text-overflow: ellipsis;
@@ -19,6 +23,12 @@
 	letter-spacing: 0.0125em;
 	white-space: nowrap;
 	border: none;
+}
+.inicioSesion:hover{
+	background: #fbffd3;
+	/* font-weight: 700; */
+	/* color: #00b19f; */
+	color: black;
 }
 .Navbar__button {
 	color: white;
