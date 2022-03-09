@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import { addDoc } from 'firebase/firestore'
 import AddCategory from '../components/AddCategory'
 import '../styles/UserDashboard.css'
+import { Link } from 'react-router-dom'
 
 // const db = getFirestore(app);
 
@@ -28,6 +29,11 @@ const Dashboard_prueba = () => {
       <div className="dashboard__navbar">
         <h2 className="dashboard__welcome">bienvenido {user.email} </h2>
         <div className="dashboardButton">
+          <Link to="/favoritos">
+            <button>
+              Favoritos
+            </button>
+          </Link>
           <button onClick={handleLogout}>salir</button>
         </div>
       </div>
