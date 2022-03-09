@@ -4,6 +4,7 @@ import { getFirestore, collection, query, getDocs, doc, setDoc  } from 'firebase
 import { useAuth } from '../context/AuthContext'
 import "../styles/ProductCard.css"
 import ModalProduct from "../Modals/ModalProduct"
+import userEvent from '@testing-library/user-event'
 
 const db = getFirestore(app)
 const ProductCard = ({prod}) => {
@@ -24,8 +25,8 @@ const ProductCard = ({prod}) => {
         const querySnapshot = await getDocs(q);
         const queryData = querySnapshot.docs.map((data) => ({...data.data(), id: data.id,}));
         console.log(queryData);
-        queryData.map(async (v) => {
-          await setDoc(doc(db, `userName/${v.id}/favProduct`, prod.id), {
+        queryData.map(async () => {
+          await setDoc(doc(db, `userName/${user.uid}/favProduct`, prod.id), {
               name: prod.name,
               price: prod.price,
               collection: prod.collection,
