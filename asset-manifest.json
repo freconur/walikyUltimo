@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/walikyUltimo/static/css/main.2a16ec52.css",
-    "main.js": "/walikyUltimo/static/js/main.4452db09.js",
+    "main.js": "/walikyUltimo/static/js/main.c4aa9db1.js",
     "static/media/header-image.jpg": "/walikyUltimo/static/media/header-image.5b2f30f15d25b9da1916.jpg",
     "static/media/background.png": "/walikyUltimo/static/media/background.4a00233f3602b18fca44.png",
     "static/media/waliky-logo.png": "/walikyUltimo/static/media/waliky-logo.907c9d967bf8b90436b0.png",
@@ -16,10 +16,10 @@
     "index.html": "/walikyUltimo/index.html",
     "static/media/bars-solid.svg": "/walikyUltimo/static/media/bars-solid.0671bc5b9388995c7446ee5e448f585d.svg",
     "main.2a16ec52.css.map": "/walikyUltimo/static/css/main.2a16ec52.css.map",
-    "main.4452db09.js.map": "/walikyUltimo/static/js/main.4452db09.js.map"
+    "main.c4aa9db1.js.map": "/walikyUltimo/static/js/main.c4aa9db1.js.map"
   },
   "entrypoints": [
     "static/css/main.2a16ec52.css",
-    "static/js/main.4452db09.js"
+    "static/js/main.c4aa9db1.js"
   ]
 }
