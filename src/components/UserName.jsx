@@ -7,7 +7,7 @@ const UserName = () => {
 // el css se encuentra en el css del navbar
   return (
     <>
-        <Link to="/user" className="user">
+        <Link to="/favoritos" className="user">
             Bienvenido<br/> {userNavbar}
         </Link>
     </>

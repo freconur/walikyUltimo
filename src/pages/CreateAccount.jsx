@@ -15,8 +15,8 @@ const CreateAccount = () => {
     password:''
   });
   const [datosUsuario, setDatosUsuario] = useState({
-    nombre: '',
-    apellido: '',
+    name: '',
+    lastName: '',
     rol: 'usuario'
   })
     const navigate = useNavigate()
@@ -24,8 +24,10 @@ const CreateAccount = () => {
 
     const handleChange = ({target:{name, value}}) => {
     setUsuario({...usuario, [name]:value})
-    setDatosUsuario({...datosUsuario, [name]: value})
     // console.log(e.target.name, e.target.value)
+  }
+  const handleChangeData= ({target:{name, value}}) => {
+    setDatosUsuario({...datosUsuario, [name]: value})
   }
 
   const handleSubmit = async (e) => {
@@ -39,19 +41,10 @@ const CreateAccount = () => {
   }
   
   const handleSubmitData = async(e) => {
-    // navigate("/user");
     e.preventDefault()
-    console.log("hola bebe, me handicho que estas haciendo maldades")
-    const q = query(collection(db, "userName"));
-          const querySnapshot = await getDocs(q);
-          const queryData = querySnapshot.docs.map((data) => ({...data.data(), id: data.id,}));
-          console.log(queryData);
-          debugger
-          queryData.map(async () => {
-            await setDoc(doc(db, `userName/${user.uid}`), {
-
-            })
-          })
+    // navigate("/user");
+    await setDoc(doc( db, `userName/${user.uid}`), datosUsuario)
+    debugger
   }
   return (
     <div className="auth">
@@ -94,20 +87,24 @@ const CreateAccount = () => {
             <div>
               <label>Nombre</label>
               <input 
-              onChange={handleChange}
+              name="name"
+              onChange={handleChangeData}
               type="text" 
               className='email input'
               />
             </div>
             <div>
               <label>Apellidos</label>
-              <input type="text" 
+              <input 
+              name="lastName"
+              type="text" 
               className='email input'
-              onChange={handleChange}
+              onChange={handleChangeData}
               />
             </div>
             <div>
               <input 
+              name="rol"
               type="text"
               // value="usuario"
               />

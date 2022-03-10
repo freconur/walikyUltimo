@@ -17,6 +17,7 @@ import Dashboard_prueba from '../pages/Dashboard_prueba';
 import PruebaButton from '../components/PruebaButton';
 import PruebaFucion from '../pages/PruebaFucion';
 import FavProducts from '../pages/FavProducts';
+import ProtectedRouteUser from '../components/ProtectedRouteUser';
 
 const App = () => {
   return (
@@ -32,9 +33,9 @@ const App = () => {
             </ProtectedRoute>
             }/>
             <Route exact path="/favoritos" element={
-              <ProtectedRoute>
+              <ProtectedRouteUser>
                 <FavProducts/>
-              </ProtectedRoute>
+              </ProtectedRouteUser>
             } />
             {/* <Route exact path="/modal" element={<ModalProduct/>} /> */}
             {/* <Route exact path="/favoritos" element={<FavProducts/>} /> */}
