@@ -30,7 +30,10 @@ export function AuthProvider({ children }) {
     }, []);
 
     const signin = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password);
+        createUserWithEmailAndPassword(
+            auth, 
+            email, 
+            password);
     };
     const login = (email, password) => {
           signInWithEmailAndPassword(
