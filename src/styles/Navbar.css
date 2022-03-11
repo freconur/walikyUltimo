@@ -20,6 +20,7 @@
 }
 .userOption {
 	grid-area: userOption;
+	height:50px;
 }
 
 .Navbar__container-logo {
@@ -101,9 +102,13 @@
 	color: #ffff;
 }
 .userActive {
-	position: absolute;
+	/* position: absolute; */
 	border: 1px solid #ffff;
 	border-radius: 5px;
+}
+.userName {
+	width: 100%;
+    contain: content;
 }
 .userNavbar {
 	padding: 0 10px;

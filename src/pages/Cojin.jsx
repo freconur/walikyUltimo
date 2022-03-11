@@ -20,8 +20,8 @@ const Cojin = () => {
       item.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
       });
-      setProduct(docs);
       setLoading(false)
+      setProduct(docs);
     };
     getProduct();
   }, []);
