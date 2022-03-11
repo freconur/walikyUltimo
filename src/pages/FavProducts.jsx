@@ -9,7 +9,7 @@ import PageLoading from "./PageLoading";
 const db = getFirestore(app);
 const FavProducts = () => {
 	
-	const { user, logout } = useAuth()
+	const { user } = useAuth()
 	const [favProduct, setFavProduct] = useState([])
 	const [loading, setLoading] = useState(false)
 
@@ -20,12 +20,13 @@ const FavProducts = () => {
       const docs = [];
       item.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
+		console.log("valor de docs",docs)
       });
 			setLoading(false)
 			setFavProduct(docs)
 		};
 		getProduct();
-	}, []);
+	},[user.uid]);
 	return (
 		<div className="container__prod">
 			<h1 className="product__title">Mis favoritos</h1>
