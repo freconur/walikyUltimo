@@ -1,0 +1,21 @@
+.MenuUser {
+    width: 140px;
+    background-color: #ffff;
+    border-radius: 5px;
+    list-style: none;
+    margin: inherit;
+    position: relative;
+    top: 55px;
+    right: 0px;
+    z-index: 1;
+}
+.menuAdmin {
+    top: 60px;
+}
+.MenuUser li {
+    margin: inherit;
+    cursor: pointer;
+}
+.MenuUser a {
+    text-decoration: none;
+}
