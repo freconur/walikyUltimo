@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/walikyUltimo/static/css/main.06582c31.css",
-    "main.js": "/walikyUltimo/static/js/main.a49b9aac.js",
+    "main.css": "/walikyUltimo/static/css/main.8acbda38.css",
+    "main.js": "/walikyUltimo/static/js/main.9038c7db.js",
     "static/media/header-image.jpg": "/walikyUltimo/static/media/header-image.5b2f30f15d25b9da1916.jpg",
     "static/media/background.png": "/walikyUltimo/static/media/background.4a00233f3602b18fca44.png",
     "static/media/waliky-logo.png": "/walikyUltimo/static/media/waliky-logo.907c9d967bf8b90436b0.png",
@@ -15,11 +15,11 @@
     "static/media/Flaticon.woff": "/walikyUltimo/static/media/Flaticon.eb2c613c7c2fbfbe1792.woff",
     "index.html": "/walikyUltimo/index.html",
     "static/media/bars-solid.svg": "/walikyUltimo/static/media/bars-solid.0671bc5b9388995c7446ee5e448f585d.svg",
-    "main.06582c31.css.map": "/walikyUltimo/static/css/main.06582c31.css.map",
-    "main.a49b9aac.js.map": "/walikyUltimo/static/js/main.a49b9aac.js.map"
+    "main.8acbda38.css.map": "/walikyUltimo/static/css/main.8acbda38.css.map",
+    "main.9038c7db.js.map": "/walikyUltimo/static/js/main.9038c7db.js.map"
   },
   "entrypoints": [
-    "static/css/main.06582c31.css",
-    "static/js/main.a49b9aac.js"
+    "static/css/main.8acbda38.css",
+    "static/js/main.9038c7db.js"
   ]
 }
